@@ -1,0 +1,11 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page">
+
+    <GridLayout columns="auto, *, auto" rows="*, auto, *" width="auto" height="auto" style.backgroundColor="lightgray" >
+        <TextView hint="type original message here" text="{{ original_message }}" class="original_textview" col="0" row="0" colSpan="3" backgroundColor="white"/>
+        <Button text="encrypt" tap="{{ onEncrypt }}" id="encrypt-btn" class="btn btn-primary btn-active encrypt-btn" col="0" row="1"/>
+        <TextField hint="password" text="{{ password }}" secure="true" col="1" row="1"/>
+        <Button text="decrypt" tap="{{ onDecrypt }}" id="decrypt-btn" class="btn btn-primary btn-active decrypt-btn" col="2" row="1"/>
+        <TextView hint="paste encrypted message here" text="{{ encrypted_message }}" class="encrypted_textview" col="0" row="2" colSpan="3" backgroundColor="white"/>
+    </GridLayout>
+
+</Page>
