@@ -1,6 +1,7 @@
 var Observable = require("data/observable").Observable;
 var tea = require("node-tea");
 var dialogs = require("ui/dialogs");
+var clipboard = require("nativescript-clipboard");
 
 
 function createViewModel() {
@@ -34,6 +35,40 @@ function createViewModel() {
         } catch (e) {
             dialogs.alert("Decrypt failed! please confirm your password not empty and encrypted message complete.");
         }
+    }
+
+    viewModel.onCopyOriginal = function() {
+        originalMessage = this.get("original_message").trim();
+        if (originalMessage && originalMessage != "") {
+            clipboard.setText(originalMessage).then(function() {
+                console.log("OK, copied to the clipboard");
+            })
+        }
+    }
+
+    viewModel.onPasteOriginal = function() {
+        clipboard.getText().then(function(content) {
+            if (content && content != "") {
+                viewModel.set("original_message", content);
+            }
+        })
+    }
+
+    viewModel.onCopyCiphertext = function() {
+        encryptedMessage = this.get("encrypted_message").trim();
+        if (encryptedMessage && encryptedMessage != "") {
+            clipboard.setText(encryptedMessage).then(function() {
+                console.log("OK, copied to the clipboard");
+            })
+        }
+    }
+
+    viewModel.onPasteCiphertext = function() {
+        clipboard.getText().then(function(content) {
+            if (content && content != "") {
+                viewModel.set("encrypted_message", content);
+            }
+        })
     }
 
     return viewModel;
