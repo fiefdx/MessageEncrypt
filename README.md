@@ -3,6 +3,7 @@
 A message encrypt & decrypt app for Android, developed with NativeScript
 
 It works like this:
+
 ![Alt text](/doc/main_window.png?raw=true "main_window")
 
 # build
