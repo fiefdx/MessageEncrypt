@@ -38,8 +38,9 @@ function createViewModel() {
     }
 
     viewModel.onCopyOriginal = function() {
-        originalMessage = this.get("original_message").trim();
+        originalMessage = this.get("original_message");
         if (originalMessage && originalMessage != "") {
+            originalMessage = originalMessage.trim();
             clipboard.setText(originalMessage).then(function() {
                 console.log("OK, copied to the clipboard");
             })
@@ -55,8 +56,9 @@ function createViewModel() {
     }
 
     viewModel.onCopyCiphertext = function() {
-        encryptedMessage = this.get("encrypted_message").trim();
+        encryptedMessage = this.get("encrypted_message")
         if (encryptedMessage && encryptedMessage != "") {
+            encryptedMessage = encryptedMessage.trim();
             clipboard.setText(encryptedMessage).then(function() {
                 console.log("OK, copied to the clipboard");
             })
