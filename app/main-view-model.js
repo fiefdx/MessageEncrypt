@@ -2,6 +2,7 @@ var Observable = require("data/observable").Observable;
 var tea = require("node-tea");
 var dialogs = require("ui/dialogs");
 var clipboard = require("nativescript-clipboard");
+var toast = require("nativescript-toast");
 
 
 function createViewModel() {
@@ -14,6 +15,7 @@ function createViewModel() {
             if (originalMessage != "" && password != "") {
                 encryptedMessage = tea.encrypt(tea.encode(originalMessage), tea.encode(password));
                 this.set("encrypted_message", encryptedMessage);
+                toast.makeText(L("encrypted")).show();
             } else {
                 dialogs.alert({title: L("Alert"),
                     message: L("encrypt_failed"),
@@ -37,6 +39,7 @@ function createViewModel() {
             if (encryptedMessage != "" && password != "") {
                 originalMessage = tea.decrypt(encryptedMessage, tea.encode(password));
                 this.set("original_message", tea.decode(originalMessage));
+                toast.makeText(L("decrypted")).show();
             } else {
                 dialogs.alert({title: L("Alert"),
                     message: L("decrypt_failed"),
@@ -58,6 +61,7 @@ function createViewModel() {
         if (originalMessage && originalMessage != "") {
             originalMessage = originalMessage.trim();
             clipboard.setText(originalMessage).then(function() {
+                toast.makeText(L("copied")).show();
                 console.log("OK, copied to the clipboard");
             })
         }
@@ -66,6 +70,7 @@ function createViewModel() {
     viewModel.onPasteOriginal = function() {
         clipboard.getText().then(function(content) {
             if (content && content != "") {
+                toast.makeText(L("pasted")).show();
                 viewModel.set("original_message", content);
             }
         })
@@ -76,6 +81,7 @@ function createViewModel() {
         if (encryptedMessage && encryptedMessage != "") {
             encryptedMessage = encryptedMessage.trim();
             clipboard.setText(encryptedMessage).then(function() {
+                toast.makeText(L("copied")).show();
                 console.log("OK, copied to the clipboard");
             })
         }
@@ -84,6 +90,7 @@ function createViewModel() {
     viewModel.onPasteCiphertext = function() {
         clipboard.getText().then(function(content) {
             if (content && content != "") {
+                toast.makeText(L("pasted")).show();
                 viewModel.set("encrypted_message", content);
             }
         })
@@ -91,10 +98,12 @@ function createViewModel() {
 
     viewModel.onClearOriginal = function() {
         this.set("original_message", "");
+        toast.makeText(L("cleared")).show();
     }
 
     viewModel.onClearCiphertext = function() {
         this.set("encrypted_message", "");
+        toast.makeText(L("cleared")).show();
     }
 
     return viewModel;

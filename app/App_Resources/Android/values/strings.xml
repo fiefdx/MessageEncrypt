@@ -16,4 +16,9 @@
 	<string name="OK">OK</string>
 	<string name="encrypt_failed">Encrypt failed! please confirm your password and message not empty.</string>
 	<string name="decrypt_failed">Decrypt failed! please confirm your password not empty and encrypted message complete.</string>
+	<string name="copied">copied</string>
+	<string name="pasted">pasted</string>
+	<string name="cleared">cleared</string>
+	<string name="encrypted">encrypted</string>
+	<string name="decrypted">decrypted</string>
 </resources>
