@@ -41,3 +41,18 @@ components that have the btn class name.
     margin-right: 1px;
     white-space: normal;
 }
+
+#clear-original-btn,
+#clear-ciphertext-btn {
+	background-color: #f44336;
+}
+
+#paste-original-btn,
+#paste-ciphertext-btn {
+	background-color: #4CAF50;
+}
+
+#encrypt-btn,
+#decrypt-btn {
+	background-color: #555555;
+}
