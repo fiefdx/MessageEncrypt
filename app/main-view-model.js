@@ -15,10 +15,16 @@ function createViewModel() {
                 encryptedMessage = tea.encrypt(tea.encode(originalMessage), tea.encode(password));
                 this.set("encrypted_message", encryptedMessage);
             } else {
-                dialogs.alert("Encrypt failed! please confirm your password and message not empty.");
+                dialogs.alert({title: L("Alert"),
+                    message: L("encrypt_failed"),
+                    okButtonText: L("OK")
+                });
             }
         } catch (e) {
-            dialogs.alert("Encrypt failed! please confirm your password and message not empty.");
+            dialogs.alert({title: L("Alert"),
+                message: L("encrypt_failed"),
+                okButtonText: L("OK")
+            });
         }
     }
 
@@ -30,10 +36,16 @@ function createViewModel() {
                 originalMessage = tea.decrypt(encryptedMessage, tea.encode(password));
                 this.set("original_message", tea.decode(originalMessage));
             } else {
-                dialogs.alert("Decrypt failed! please confirm your password not empty and encrypted message complete.");
+                dialogs.alert({title: L("Alert"),
+                    message: L("decrypt_failed"),
+                    okButtonText: L("OK")
+                });
             }
         } catch (e) {
-            dialogs.alert("Decrypt failed! please confirm your password not empty and encrypted message complete.");
+            dialogs.alert({title: L("Alert"),
+                message: L("decrypt_failed"),
+                okButtonText: L("OK")
+            });
         }
     }
 

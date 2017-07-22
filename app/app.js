@@ -5,6 +5,8 @@ purpose of the file is to pass control to the app’s first module.
 */
 
 require("./bundle-config");
+require('globals');
+require('nativescript-i18n');
 var application = require("application");
 
 application.start({ moduleName: "main-page" });

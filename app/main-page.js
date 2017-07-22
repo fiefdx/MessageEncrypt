@@ -4,17 +4,17 @@ var frameModule = require("ui/frame");
 
 function loadButtonTexts(page) {
     btn = page.getViewById("encrypt-btn");
-    btn.text = "Encrypt";
+    btn.text = L("Encrypt");
     btn = page.getViewById("decrypt-btn");
-    btn.text = "Decrypt";
+    btn.text = L("Decrypt");
     btn = page.getViewById("copy-original-btn");
-    btn.text = "copy\noriginal";
+    btn.text = L("copy") + "\n" + L("original");
     btn = page.getViewById("paste-original-btn");
-    btn.text = "paste\noriginal";
+    btn.text = L("paste") + "\n" + L("original");
     btn = page.getViewById("copy-ciphertext-btn");
-    btn.text = "copy\nciphertext";
+    btn.text = L("copy") + "\n" + L("ciphertext");
     btn = page.getViewById("paste-ciphertext-btn");
-    btn.text = "paste\nciphertext";
+    btn.text = L("paste") + "\n" + L("ciphertext");
 }
 
 function onNavigatingTo(args) {

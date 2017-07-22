@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "nativescript-clipboard": "^1.1.6",
+    "nativescript-i18n": "^0.2.2",
     "nativescript-theme-core": "~1.0.2",
     "node-tea": "0.0.2",
     "tns-core-modules": "3.1.0"
@@ -20,5 +21,9 @@
     "babel-types": "6.25.0",
     "babylon": "6.17.4",
     "lazy": "1.0.11"
+  },
+  "nativescript-i18n": {
+    "customLangPath": "app/resources/i18n",
+    "defaultLang": "en"
   }
 }

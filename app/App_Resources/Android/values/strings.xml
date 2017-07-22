@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">MessageEncrypt</string>
+	<string name="title_activity_kimera">MessageEncrypt</string>
+	<string name="Encrypt">Encrypt</string>
+	<string name="Decrypt">Decrypt</string>
+	<string name="copy">copy</string>
+	<string name="paste">paste</string>
+	<string name="original">original</string>
+	<string name="ciphertext">ciphertext</string>
+	<string name="original_message">original message</string>
+	<string name="ciphertext_message">ciphertext message</string>
+	<string name="password">password</string>
+	<string name="Alert">Alert</string>
+	<string name="OK">OK</string>
+	<string name="encrypt_failed">Encrypt failed! please confirm your password and message not empty.</string>
+	<string name="decrypt_failed">Decrypt failed! please confirm your password not empty and encrypted message complete.</string>
+</resources>

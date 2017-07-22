@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">文本加密</string>
+	<string name="title_activity_kimera">文本加密</string>
+	<string name="Encrypt">加密</string>
+	<string name="Decrypt">解密</string>
+	<string name="copy">复制</string>
+	<string name="paste">粘贴</string>
+	<string name="original">原文</string>
+	<string name="ciphertext">密文</string>
+	<string name="original_message">原始信息</string>
+	<string name="ciphertext_message">密文信息</string>
+	<string name="password">密码</string>
+	<string name="Alert">警告</string>
+	<string name="OK">确认</string>
+	<string name="encrypt_failed">加密失败！请确认密码和原始信息不为空。</string>
+	<string name="decrypt_failed">解密失败！请确认密码不为空，并且，密文信息完整。</string>
+</resources>
