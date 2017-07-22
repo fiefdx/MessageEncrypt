@@ -1,6 +1,7 @@
 var createViewModel = require("./main-view-model").createViewModel;
 var application = require("application");
 var frameModule = require("ui/frame");
+var toast = require("nativescript-toast");
 
 function loadButtonTexts(page) {
     btn = page.getViewById("encrypt-btn");
@@ -64,7 +65,7 @@ var activity = application.android.startActivity ||
 var lastPress;
 
 activity.onBackPressed = function() {
-    var timeDelay = 500
+    var timeDelay = 2000;
     if (lastPress + timeDelay > java.lang.System.currentTimeMillis()) {
         // var startMain = new android.content.Intent(android.content.Intent.ACTION_MAIN);
         // startMain.addCategory(android.content.Intent.CATEGORY_HOME);
@@ -76,6 +77,7 @@ activity.onBackPressed = function() {
         java.lang.System.exit(0);
     } else {
         frameModule.topmost().goBack();
+        toast.makeText(L("exit_toast")).show();
     }
     lastPress = java.lang.System.currentTimeMillis();
 }
