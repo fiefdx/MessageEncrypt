@@ -15,6 +15,10 @@ function loadButtonTexts(page) {
     btn.text = L("copy") + "\n" + L("ciphertext");
     btn = page.getViewById("paste-ciphertext-btn");
     btn.text = L("paste") + "\n" + L("ciphertext");
+    btn = page.getViewById("clear-original-btn");
+    btn.text = L("clear") + "\n" + L("original");
+    btn = page.getViewById("clear-ciphertext-btn");
+    btn.text = L("clear") + "\n" + L("ciphertext");
 }
 
 function onNavigatingTo(args) {

@@ -19,12 +19,14 @@ function createViewModel() {
                     message: L("encrypt_failed"),
                     okButtonText: L("OK")
                 });
+                this.set("encrypted_message", "");
             }
         } catch (e) {
             dialogs.alert({title: L("Alert"),
                 message: L("encrypt_failed"),
                 okButtonText: L("OK")
             });
+            this.set("encrypted_message", "");
         }
     }
 
@@ -40,12 +42,14 @@ function createViewModel() {
                     message: L("decrypt_failed"),
                     okButtonText: L("OK")
                 });
+                this.set("original_message", "");
             }
         } catch (e) {
             dialogs.alert({title: L("Alert"),
                 message: L("decrypt_failed"),
                 okButtonText: L("OK")
             });
+            this.set("original_message", "");
         }
     }
 
@@ -83,6 +87,14 @@ function createViewModel() {
                 viewModel.set("encrypted_message", content);
             }
         })
+    }
+
+    viewModel.onClearOriginal = function() {
+        this.set("original_message", "");
+    }
+
+    viewModel.onClearCiphertext = function() {
+        this.set("encrypted_message", "");
     }
 
     return viewModel;

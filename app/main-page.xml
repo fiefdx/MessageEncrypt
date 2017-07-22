@@ -1,18 +1,20 @@
 <Page xmlns="http://schemas.nativescript.org/tns.xsd" navigatingTo="onNavigatingTo" class="page" actionBarHidden="true">
 
-    <GridLayout columns="auto, *, *, auto" rows="*, auto, auto, *" width="auto" height="auto" style.backgroundColor="lightgray" >
-        <TextView hint="{{ L('original_message') }}" text="{{ original_message }}" class="original_textview" col="0" row="0" colSpan="4" backgroundColor="white"/>
+    <GridLayout columns="*, *, *, *, *, *" rows="*, auto, auto, *" width="auto" height="auto" style.backgroundColor="lightgray" >
+        <TextView hint="{{ L('original_message') }}" text="{{ original_message }}" class="original_textview" col="0" row="0" colSpan="6" backgroundColor="white"/>
 
         <Button id="encrypt-btn" tap="{{ onEncrypt }}" class="btn btn-primary btn-active encrypt-btn" col="0" row="1"/>
-        <TextField hint="{{ L('password') }}" text="{{ password }}" secure="true" col="1" row="1" colSpan="2"/>
-        <Button id="decrypt-btn" tap="{{ onDecrypt }}" class="btn btn-primary btn-active decrypt-btn" col="3" row="1"/>
+        <TextField hint="{{ L('password') }}" text="{{ password }}" secure="true" col="1" row="1" colSpan="4"/>
+        <Button id="decrypt-btn" tap="{{ onDecrypt }}" class="btn btn-primary btn-active decrypt-btn" col="5" row="1"/>
 
         <Button id="copy-original-btn" tap="{{ onCopyOriginal }}" class="btn btn-primary btn-active btn-small" col="0" row="2" colSpan="1"/>
         <Button id="paste-original-btn" tap="{{ onPasteOriginal }}" class="btn btn-primary btn-active btn-small" col="1" row="2" colSpan="1"/>
-        <Button id="copy-ciphertext-btn" tap="{{ onCopyCiphertext }}" class="btn btn-primary btn-active btn-small" col="2" row="2" colSpan="1"/>
-        <Button id="paste-ciphertext-btn" tap="{{ onPasteCiphertext }}" class="btn btn-primary btn-active btn-small" col="3" row="2" colSpan="1"/>
+        <Button id="clear-original-btn" tap="{{ onClearOriginal }}" class="btn btn-primary btn-active btn-small" col="2" row="2" colSpan="1"/>
+        <Button id="clear-ciphertext-btn" tap="{{ onClearCiphertext }}" class="btn btn-primary btn-active btn-small" col="3" row="2" colSpan="1"/>
+        <Button id="paste-ciphertext-btn" tap="{{ onPasteCiphertext }}" class="btn btn-primary btn-active btn-small" col="4" row="2" colSpan="1"/>
+        <Button id="copy-ciphertext-btn" tap="{{ onCopyCiphertext }}" class="btn btn-primary btn-active btn-small" col="5" row="2" colSpan="1"/>
 
-        <TextView hint="{{ L('ciphertext_message') }}" text="{{ encrypted_message }}" class="encrypted_textview" col="0" row="3" colSpan="4" backgroundColor="white"/>
+        <TextView hint="{{ L('ciphertext_message') }}" text="{{ encrypted_message }}" class="encrypted_textview" col="0" row="3" colSpan="6" backgroundColor="white"/>
     </GridLayout>
 
 </Page>
