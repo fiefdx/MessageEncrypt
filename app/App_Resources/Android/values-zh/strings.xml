@@ -6,6 +6,7 @@
 	<string name="Decrypt">解密</string>
 	<string name="copy">复制</string>
 	<string name="paste">粘贴</string>
+	<string name="clear">清空</string>
 	<string name="original">原文</string>
 	<string name="ciphertext">密文</string>
 	<string name="original_message">原始信息</string>

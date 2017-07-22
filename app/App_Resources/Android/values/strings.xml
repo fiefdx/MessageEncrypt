@@ -6,6 +6,7 @@
 	<string name="Decrypt">Decrypt</string>
 	<string name="copy">copy</string>
 	<string name="paste">paste</string>
+	<string name="clear">clear</string>
 	<string name="original">original</string>
 	<string name="ciphertext">ciphertext</string>
 	<string name="original_message">original message</string>
