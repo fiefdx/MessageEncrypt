@@ -17,7 +17,7 @@ The following CSS rule changes the font size of all UI
 components that have the btn class name.
 */
 .btn {
-    font-size: 15;
+    font-size: 14;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 2px;
@@ -30,7 +30,7 @@ components that have the btn class name.
 }
 
 .btn-small {
-	font-size: 12;
+	font-size: 11;
     padding-top: 2px;
     padding-bottom: 2px;
     padding-left: 2px;
