@@ -13,7 +13,7 @@ function createViewModel() {
             originalMessage = this.get("original_message").trim();
             password = this.get("password").trim();
             if (originalMessage != "" && password != "") {
-                encryptedMessage = tea.encrypt(tea.encode(originalMessage), tea.encode(password));
+                encryptedMessage = tea.encryptBase64(tea.encodeUtf8(originalMessage), tea.encodeUtf8(password));
                 this.set("encrypted_message", encryptedMessage);
                 toast.makeText(L("encrypted")).show();
             } else {
@@ -37,8 +37,8 @@ function createViewModel() {
             encryptedMessage = this.get("encrypted_message").trim();
             password = this.get("password").trim();
             if (encryptedMessage != "" && password != "") {
-                originalMessage = tea.decrypt(encryptedMessage, tea.encode(password));
-                this.set("original_message", tea.decode(originalMessage));
+                originalMessage = tea.decryptBase64(encryptedMessage, tea.encodeUtf8(password));
+                this.set("original_message", tea.decodeUtf8(originalMessage));
                 toast.makeText(L("decrypted")).show();
             } else {
                 dialogs.alert({title: L("Alert"),
